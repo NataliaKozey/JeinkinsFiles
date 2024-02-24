@@ -27,7 +27,11 @@ pipeline {
                     sh '''
                     ls -l
                     pwd
-                    ansible-playbook server-playbook.yml  --extra-vars "ip_address=${ip_address}" --extra-vars "mysql_root_password=${mysql_root_password}" --extra-vars "myapp_user_password=${myapp_user_password}" --diff
+                    ansible-playbook server-playbook.yml \
+                                   --extra-vars "ip_address=${ip_address}" \
+                                   --extra-vars "mysql_root_password=${mysql_root_password}" \
+                                   --extra-vars "myapp_user_password=${myapp_user_password}" \
+                                   --diff
                     '''
 
                 }
