@@ -1,9 +1,9 @@
 pipeline {
     agent any
     parameters {
-        stringParam('ip_address', '', 'IP Address')
-        stringParam('mysql_root_password', '', 'MySQL Root Password')
-        stringParam('myapp_user_password', '', 'MyApp User Password')
+        string('ip_address', '', 'IP Address')
+        string('mysql_root_password', '', 'MySQL Root Password')
+        string('myapp_user_password', '', 'MyApp User Password')
     }
     stages {
         stage('Checkout') {
