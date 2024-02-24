@@ -41,13 +41,4 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            script{
-                sh """
-                curl --location 'https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage' --form 'text="The build was completed. \n\nBuild URL: ${env.BUILD_URL}"' --form 'chat_id="253547971"'
-                """
-            }
-        }
-    }
 }
