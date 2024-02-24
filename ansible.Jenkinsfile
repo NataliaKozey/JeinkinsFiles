@@ -28,7 +28,7 @@ pipeline {
                     ls -l
                     pwd
                     ansible-playbook server-playbook.yml \
-                                   --extra-vars "all=${ip_address}" \
+                                   --extra-vars "target_host=${ip_address}" \
                                    --extra-vars "mysql_root_password=${mysql_root_password}" \
                                    --extra-vars "myapp_user_password=${myapp_user_password}" \
                                    --diff
