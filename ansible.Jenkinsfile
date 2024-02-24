@@ -1,9 +1,10 @@
 pipeline {
     agent any
     parameters {
-        string('ip_address', '', 'IP Address')
-        string('mysql_root_password', '', 'MySQL Root Password')
-        string('myapp_user_password', '', 'MyApp User Password')
+        string(name: 'IP_ADDRESS', defaultValue: '', description: 'IP Address')
+        string(name: 'MYSQL_ROOT_PASSWORD', defaultValue: '', description: 'MySQL Root Password')
+        string(name: 'MYAPP_USER_PASSWORD', defaultValue: '', description: 'MyApp User Password')
+
     }
     stages {
         stage('Checkout') {

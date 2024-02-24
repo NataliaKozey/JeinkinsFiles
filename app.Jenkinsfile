@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string('REMOTE_IP', '', 'IP Address')
+        string(name: 'REMOTE_IP', defaultValue: '', description: 'IP Address')
     }
     stages {
         stage('Checkout') {
