@@ -27,7 +27,7 @@ pipeline {
                     sh '''
                     ls -l
                     pwd
-                    ansible-playbook server-playbook.yml -i ${ip_address} \
+                    ansible-playbook server-playbook.yml  -i inventory.ini \
                                    --extra-vars "target_hosts=${ip_address}" \
                                    --extra-vars "mysql_root_password=${mysql_root_password}" \
                                    --extra-vars "myapp_user_password=${myapp_user_password}" \
